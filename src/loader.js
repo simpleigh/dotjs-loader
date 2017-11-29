@@ -17,7 +17,7 @@ const schema = {
   }
 }
 
-export default source => {
+export default function (source) {
   const options = getOptions(this);
   validateOptions(schema, options, 'dotjs-loader');
 
