@@ -12,13 +12,16 @@
   },
   "license": "MIT",
   "author": "Leigh Simpson <code@simpleigh.com> (https://www.simpleigh.com/)",
-  "main": "dist/dotjs-loader.js",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simpleigh/dotjs-loader.git"
   },
   "scripts": {
-    "build": "babel src/loader.js --out-file dist/dotjs-loader.js",
+    "build": "babel src -d dist",
     "test": "jest"
   },
   "dependencies": {
