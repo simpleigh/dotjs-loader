@@ -1,5 +1,7 @@
 # dotjs-loader
 
+[![Build Status](https://travis-ci.org/simpleigh/dotjs-loader.svg?branch=master)](https://travis-ci.org/simpleigh/dotjs-loader)
+
 [doT.js](http://olado.github.io/doT/) module loader for webpack
 
 ## Usage
