@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/simpleigh/dotjs-loader.svg?branch=master)](https://travis-ci.org/simpleigh/dotjs-loader)
 
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/dotjs-loader)
+
 [doT.js](http://olado.github.io/doT/) module loader for webpack
 
 ## Usage
@@ -18,6 +20,15 @@ import template from './file.dot';
 
 // use the template
 console.log(template());
+```
+
+### Installation
+
+Install using `npm`.
+doT is a peer dependency and should be installed separately:
+
+```shell
+npm install --save-dev dot dotjs-loader
 ```
 
 ### Options
