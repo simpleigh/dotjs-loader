@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build": "babel src -d dist",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "coverage": "codecov"
   },
   "dependencies": {
     "loader-utils": "^1.1.0",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "codecov": "^3.0.0",
     "dot": "^1.1.2",
     "jest": "^21.2.1",
     "memory-fs": "^0.4.1",
