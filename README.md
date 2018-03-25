@@ -95,6 +95,25 @@ module: {
 }
 ```
 
+## Including templates
+
+The loader adds a `def.loadfile(filename)` function to include and compile doT templates.
+
+For example, a `parts.dot` file:
+
+```
+{{##def.works:
+  {{='It works!'}}
+#}}
+```
+
+And some other template file:
+
+```
+{{#def.loadfile('parts.dot')}}
+{{#def.works}}
+```   
+
 ## Similar projects
 
 [`dot-loader`](https://github.com/ross-pfahler/dot-loader) is another loader
