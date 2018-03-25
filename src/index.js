@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 import doT from 'dot';
 import { getOptions } from 'loader-utils';
 import validateOptions from 'schema-utils';
@@ -40,5 +43,14 @@ export default function (source) {
 
   doT.templateSettings.selfcontained = true;
 
-  return 'export default ' + doT.template(source);
+  var webpackContext = this;
+
+  function loadfile (filename) {
+    const filepath = path.resolve(webpackContext.context, filename);
+    webpackContext.addDependency(filepath);
+
+    return fs.readFileSync(filepath);
+  }
+
+  return 'export default ' + doT.template(source, undefined, {loadfile: loadfile});
 };
