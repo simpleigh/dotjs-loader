@@ -1,7 +1,7 @@
 # dotjs-loader
 
 [![npm](https://img.shields.io/npm/v/dotjs-loader.svg)](https://www.npmjs.com/package/dotjs-loader)
-[![Build Status](https://travis-ci.org/simpleigh/dotjs-loader.svg?branch=master)](https://travis-ci.org/simpleigh/dotjs-loader)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/simpleigh/dotjs-loader/build.yml)](https://github.com/simpleigh/dotjs-loader/actions/workflows/build.yml)
 [![Codecov](https://img.shields.io/codecov/c/github/simpleigh/dotjs-loader.svg)](https://codecov.io/gh/simpleigh/dotjs-loader)
 [![Downloads](https://img.shields.io/npm/dt/dotjs-loader.svg)](https://www.npmjs.com/package/dotjs-loader)
 [![Issues](https://img.shields.io/github/issues/simpleigh/dotjs-loader.svg)](https://github.com/simpleigh/dotjs-loader/issues)
