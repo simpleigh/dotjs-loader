@@ -30,7 +30,7 @@ import compiler from './compiler.js';
     it('compiles to the expected output', () => {
       const source = readFileSync(`./tests/fixtures/${fixture}.dot`);
       return compiler(fixture).then(stats => {
-        const output = stats.toJson().modules[0].source;
+        const output = stats.toJson({ source: true }).modules[0].source;
         expect(output).toBe(`export default ${doT.template(source)}`);
       });
     });
