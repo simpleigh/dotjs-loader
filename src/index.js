@@ -5,15 +5,15 @@ const schema = {
   type: 'object',
   properties: {
     varname: {
-      type: 'string'
+      type: 'string',
     },
     strip: {
-      type: 'boolean'
+      type: 'boolean',
     },
     append: {
-      type: 'boolean'
-    }
-  }
+      type: 'boolean',
+    },
+  },
 };
 
 export default function (source) {
@@ -35,7 +35,7 @@ export default function (source) {
     'varname',
     'strip',
     'append',
-  ].forEach(option => {
+  ].forEach((option) => {
     if (options[option]) {
       doT.templateSettings[option] = options[option];
     }
@@ -44,4 +44,4 @@ export default function (source) {
   doT.templateSettings.selfcontained = true;
 
   return 'export default ' + doT.template(source);
-};
+}

@@ -25,9 +25,7 @@ Configure the loader in `webpack.config.js`:
 
 ```javascript
 module: {
-  loaders: [
-    { test: /\.dot$/, loader: 'dotjs-loader' }
-  ]
+  loaders: [{ test: /\.dot$/, loader: 'dotjs-loader' }];
 }
 ```
 
@@ -52,7 +50,7 @@ console.log(template());
 Pass any template data to the function:
 
 ```javascript
-template({key: 'value'});
+template({ key: 'value' });
 ```
 
 Alternatively you can explicitly call the loader without having configured it:
@@ -68,16 +66,16 @@ are available.
 They map directly to [`doT.templateSettings`](http://olado.github.io/doT/)
 unless stated otherwise:
 
-* `evaluate`
-* `interpolate`
-* `encode`
-* `use`
-* `define`
-* `conditional`
-* `iterate`
-* `varname`
-* `strip`
-* `append`
+- `evaluate`
+- `interpolate`
+- `encode`
+- `use`
+- `define`
+- `conditional`
+- `iterate`
+- `varname`
+- `strip`
+- `append`
 
 Options are most conveniently passed in `webpack.config.js`:
 
@@ -88,10 +86,10 @@ module: {
       test: /\.dot$/,
       loader: 'dotjs-loader',
       options: {
-        varname: 'context'
-      }
-    }
-  ]
+        varname: 'context',
+      },
+    },
+  ];
 }
 ```
 
@@ -102,9 +100,10 @@ for doT templates, but it doesn't allow configuration of `templateSettings`.
 At the time of writing there was a
 [PR](https://github.com/ross-pfahler/dot-loader/pull/7) to add this feature,
 but it suffered from some drawbacks:
-* it's not merged
-* it takes configuration from a `.dotrc` file rather than loader options
-* it doesn't mark that file as a [loader dependency](https://webpack.js.org/contribute/writing-a-loader/#loader-dependencies)
+
+- it's not merged
+- it takes configuration from a `.dotrc` file rather than loader options
+- it doesn't mark that file as a [loader dependency](https://webpack.js.org/contribute/writing-a-loader/#loader-dependencies)
 
 I've also taken the opportunity to include unit tests and hope to add more
 features as time permits.

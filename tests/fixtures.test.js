@@ -11,12 +11,10 @@ import compiler from './compiler.js';
   'evaluation',
   'interpolation',
   'partials',
-].forEach(fixture => {
-
+].forEach((fixture) => {
   describe(`"${fixture}" fixture`, () => {
-
     it('compiles without errors or warning', () => {
-      return compiler(fixture).then(stats => {
+      return compiler(fixture).then((stats) => {
         stats = stats.toJson();
         expect(stats.errors.length).toBe(0);
         expect(stats.warnings.length).toBe(0);
@@ -29,12 +27,10 @@ import compiler from './compiler.js';
 
     it('compiles to the expected output', () => {
       const source = readFileSync(`./tests/fixtures/${fixture}.dot`);
-      return compiler(fixture).then(stats => {
+      return compiler(fixture).then((stats) => {
         const output = stats.toJson({ source: true }).modules[0].source;
         expect(output).toBe(`export default ${doT.template(source)}`);
       });
     });
-
   });
-
 });

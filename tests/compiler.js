@@ -17,18 +17,20 @@ function configFactory(fixture, options) {
     entry: `./fixtures/${fixture}.dot`,
     output: {
       path: path.resolve(__dirname),
-      filename: 'bundle.js'
+      filename: 'bundle.js',
     },
     mode: 'none',
     module: {
-      rules: [{
-        test: /\.dot$/,
-        use: {
-          loader: path.resolve(__dirname, '../src/index.js'),
-          options: options
-        }
-      }]
-    }
+      rules: [
+        {
+          test: /\.dot$/,
+          use: {
+            loader: path.resolve(__dirname, '../src/index.js'),
+            options: options,
+          },
+        },
+      ],
+    },
   };
 }
 
@@ -38,7 +40,7 @@ function configFactory(fixture, options) {
  * @param {any}    options - loader options
  * @returns {Promise} that resolves to the compiled output
  */
-export default (fixture, options = { }) => {
+export default (fixture, options = {}) => {
   const compiler = webpack(configFactory(fixture, options));
 
   compiler.outputFileSystem = createFsFromVolume(new Volume());
@@ -52,4 +54,4 @@ export default (fixture, options = { }) => {
       resolve(stats);
     });
   });
-}
+};

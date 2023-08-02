@@ -1,9 +1,8 @@
 import compiler from './compiler.js';
 
 describe('error handling', () => {
-
   it('handles errors gracefully', () => {
-    return compiler('error').then(stats => {
+    return compiler('error').then((stats) => {
       stats = stats.toJson();
       expect(stats.errors.length).toBe(1);
       expect(stats.warnings.length).toBe(0);
@@ -13,5 +12,4 @@ describe('error handling', () => {
       expect(stats.modules[0].warnings).toBe(0);
     });
   });
-
 });
