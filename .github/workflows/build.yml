@@ -3,7 +3,36 @@ name: Build
 on: push
 
 jobs:
-  build:
+  pinned-version-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        # https://github.com/actions/setup-node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Install Node dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Test
+        run: yarn test
+
+      - name: Publish test coverage
+        # https://github.com/codecov/codecov-action
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  matrix-build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -29,9 +58,3 @@ jobs:
 
       - name: Test
         run: yarn test
-
-      - name: Publish test coverage
-        # https://github.com/codecov/codecov-action
-        uses: codecov/codecov-action@v3
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
