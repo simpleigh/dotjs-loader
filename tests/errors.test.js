@@ -11,9 +11,6 @@ describe('error handling', () => {
       expect(stats.modules[0].errors).toBe(1);
       expect(stats.modules[0].failed).toBe(true);
       expect(stats.modules[0].warnings).toBe(0);
-    }).catch((e) => {
-      fail();
-      throw e;
     });
   });
 

@@ -1,9 +1,9 @@
 import path from 'path';
 
-import memoryfs from 'memory-fs';
+import { createFsFromVolume, Volume } from 'memfs';
 import webpack from 'webpack';
 
-// Adapted from https://webpack.js.org/contribute/writing-a-loader/
+// Adapted from https://webpack.js.org/contribute/writing-a-loader/#testing
 
 /**
  * Creates a webpack configuration
@@ -19,6 +19,7 @@ function configFactory(fixture, options) {
       path: path.resolve(__dirname),
       filename: 'bundle.js'
     },
+    mode: 'none',
     module: {
       rules: [{
         test: /\.dot$/,
@@ -39,7 +40,9 @@ function configFactory(fixture, options) {
  */
 export default (fixture, options = { }) => {
   const compiler = webpack(configFactory(fixture, options));
-  compiler.outputFileSystem = new memoryfs();
+
+  compiler.outputFileSystem = createFsFromVolume(new Volume());
+  compiler.outputFileSystem.join = path.join.bind(path);
 
   return new Promise((resolve, reject) => {
     compiler.run((err, stats) => {

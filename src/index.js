@@ -1,6 +1,5 @@
 import doT from 'dot';
-import { getOptions } from 'loader-utils';
-import validateOptions from 'schema-utils';
+import { validate } from 'schema-utils';
 
 const schema = {
   type: 'object',
@@ -15,11 +14,15 @@ const schema = {
       type: 'boolean'
     }
   }
-}
+};
 
 export default function (source) {
-  const options = getOptions(this);
-  validateOptions(schema, options, 'dotjs-loader');
+  const options = this.getOptions();
+
+  validate(schema, options, {
+    name: 'dotjs-loader',
+    baseDataPath: 'options',
+  });
 
   [
     'evaluate',
