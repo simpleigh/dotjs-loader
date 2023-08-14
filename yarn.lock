@@ -2848,10 +2848,10 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-memfs@4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.2.0.tgz#b30d4b70626b1015f4c35548eab34087a903a5f5"
-  integrity sha512-V5/xE+zl6+soWxlBjiVTQSkfXybTwhEBj2I8sK9LaS5lcZsTuhRftakrcRpDY7Ycac2NTK/VzEtpKMp+gpymrQ==
+memfs@4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.2.1.tgz#8c5a48707a460dde8e734b15e405e8377db2bec5"
+  integrity sha512-CINEB6cNAAhLUfRGrB4lj2Pj47ygerEmw3jxPb6R1gkD6Jfp484gJLteQ6MzqIjGWtFWuVzDl+KN7HiipMuKSw==
   dependencies:
     json-joy "^9.2.0"
     thingies "^1.11.1"
