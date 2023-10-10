@@ -2904,10 +2904,10 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
-memfs@4.2.1:
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.2.1.tgz#8c5a48707a460dde8e734b15e405e8377db2bec5"
-  integrity sha512-CINEB6cNAAhLUfRGrB4lj2Pj47ygerEmw3jxPb6R1gkD6Jfp484gJLteQ6MzqIjGWtFWuVzDl+KN7HiipMuKSw==
+memfs@4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/memfs/-/memfs-4.6.0.tgz#e812d438f73482a7110420d13d381c730b9a4de5"
+  integrity sha512-I6mhA1//KEZfKRQT9LujyW6lRbX7RkC24xKododIDO3AGShcaFAMKElv1yFGWX8fD4UaSiwasr3NeQ5TdtHY1A==
   dependencies:
     json-joy "^9.2.0"
     thingies "^1.11.1"
